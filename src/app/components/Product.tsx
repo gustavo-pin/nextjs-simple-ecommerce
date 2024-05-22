@@ -1,9 +1,9 @@
 import { ProductType } from "@/types/ProductType"
 import ProductImage from "./ProductImage";
 
-interface ProductProps {
-    product: ProductType
-}
+
+interface ProductProps {product: ProductType}
+
 
 export default function Product({ product }: ProductProps) {
     

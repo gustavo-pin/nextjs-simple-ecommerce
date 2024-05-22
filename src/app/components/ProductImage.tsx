@@ -20,7 +20,7 @@ export default function ProductImage({ product, fill }: ProductImageProps) {
             className={`object-cover ${
                 loading ? 'scale-110 blur-3xl grayscale':'scale-100 blur-0 grayscale-0'
             }`}
-            onLoadingComplete={() => setLoading(false)}
+            onLoad={() => setLoading(false)}
         />
     ) : (
         <Image
@@ -31,7 +31,7 @@ export default function ProductImage({ product, fill }: ProductImageProps) {
         className={`object-cover ${
             loading ? 'scale-110 blur-3xl grayscale':'scale-100 blur-0 grayscale-0'
         }`}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         />
     )
 }

@@ -6,6 +6,10 @@ import Image from "next/image";
 
 export default function CartDrawer() {
     const useStore = useCartStore();
+
+    const totalPrice = useStore.cart.reduce((acc, item) => {
+        return acc + item.price! * item.quantity!
+    }, 0)
     
     return ( 
         <div onClick={() => useStore.toggleCart()} className="fixed w-full h-screen bg-black/25 left-0 top-0 z-50">
@@ -47,6 +51,25 @@ export default function CartDrawer() {
                         </div>
                     </div>
                 ))}
+
+                {
+                    useStore.cart.length > 0 && (
+                        <div className="mt-5">
+                            <p className="text-teal-600 font-bold mb-2">
+                                Total: {formatPrice(totalPrice)}
+                            </p>
+                            <button className="w-full rounded-md bg-teal-600 text-white py-2">
+                                Finish order
+                            </button>
+                        </div>
+                    )
+                }
+
+                {
+                    useStore.cart.length === 0 && (
+                        <h1>Your cart is empty. </h1>
+                    )
+                }
             </div>
         </div>
     )

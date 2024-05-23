@@ -14,7 +14,7 @@ export default function Product({ product }: ProductProps) {
             </div>
 
             <div className="flex justify-between font-bold my-3">
-                <p className="w-40 truncate">{product.title}</p>
+                <p className="w-40 truncate">{product.name}</p>
 
                 <p className="text-md text-teal-300">$ {product.price?.toFixed(2)}</p>
             </div>

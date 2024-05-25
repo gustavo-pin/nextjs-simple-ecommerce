@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["files.stripe.com"]
+        remotePatterns: [
+            {
+                hostname: "files.stripe.com",
+                protocol: "https" 
+            }
+        ]
     }
 };
 

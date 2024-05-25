@@ -1,3 +1,4 @@
+'use client'
 import { useCartStore } from "@/store"
 import { useEffect } from "react"
 
